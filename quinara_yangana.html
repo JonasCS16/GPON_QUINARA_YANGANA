@@ -48,10 +48,11 @@
         <script src="data/FIBRA_ADSS_12H_4.js"></script>
         <script src="data/FIBRA_ADSS_12H_TRONCAL_5.js"></script>
         <script src="data/NODO_6.js"></script>
-        <script src="data/NAPS_7.js"></script>
-        <script src="data/MANGA_LINEAL_8.js"></script>
-        <script src="data/SECTOR_9.js"></script>
-        <script src="data/DOMOS_10.js"></script>
+        <script src="data/FIBRA_ADSS_24H_7.js"></script>
+        <script src="data/NAPS_8.js"></script>
+        <script src="data/MANGA_LINEAL_9.js"></script>
+        <script src="data/SECTOR_10.js"></script>
+        <script src="data/DOMOS_11.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -70,7 +71,7 @@
         }
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[-4.367990146276577,-79.18231583079275],[-4.360500572692539,-79.1699574720266]]);
+        }).fitBounds([[-4.324710380164155,-79.21016665183033],[-4.318052603182165,-79.19918144403792]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -465,7 +466,57 @@
         });
         bounds_group.addLayer(layer_NODO_6);
         map.addLayer(layer_NODO_6);
-        function pop_NAPS_7(feature, layer) {
+        function pop_FIBRA_ADSS_24H_7(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_FIBRA_ADSS_24H_7_0() {
+            return {
+                pane: 'pane_FIBRA_ADSS_24H_7',
+                opacity: 1,
+                color: 'rgba(244,72,144,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_FIBRA_ADSS_24H_7');
+        map.getPane('pane_FIBRA_ADSS_24H_7').style.zIndex = 407;
+        map.getPane('pane_FIBRA_ADSS_24H_7').style['mix-blend-mode'] = 'normal';
+        var layer_FIBRA_ADSS_24H_7 = new L.geoJson(json_FIBRA_ADSS_24H_7, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_FIBRA_ADSS_24H_7',
+            layerName: 'layer_FIBRA_ADSS_24H_7',
+            pane: 'pane_FIBRA_ADSS_24H_7',
+            onEachFeature: pop_FIBRA_ADSS_24H_7,
+            style: style_FIBRA_ADSS_24H_7_0,
+        });
+        bounds_group.addLayer(layer_FIBRA_ADSS_24H_7);
+        map.addLayer(layer_FIBRA_ADSS_24H_7);
+        function pop_NAPS_8(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -512,9 +563,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_NAPS_7_0() {
+        function style_NAPS_8_0() {
             return {
-                pane: 'pane_NAPS_7',
+                pane: 'pane_NAPS_8',
                 radius: 3.6,
                 opacity: 1,
                 color: 'rgba(228,18,207,1.0)',
@@ -528,27 +579,27 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_NAPS_7');
-        map.getPane('pane_NAPS_7').style.zIndex = 407;
-        map.getPane('pane_NAPS_7').style['mix-blend-mode'] = 'normal';
-        var layer_NAPS_7 = new L.geoJson(json_NAPS_7, {
+        map.createPane('pane_NAPS_8');
+        map.getPane('pane_NAPS_8').style.zIndex = 408;
+        map.getPane('pane_NAPS_8').style['mix-blend-mode'] = 'normal';
+        var layer_NAPS_8 = new L.geoJson(json_NAPS_8, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_NAPS_7',
-            layerName: 'layer_NAPS_7',
-            pane: 'pane_NAPS_7',
-            onEachFeature: pop_NAPS_7,
+            dataVar: 'json_NAPS_8',
+            layerName: 'layer_NAPS_8',
+            pane: 'pane_NAPS_8',
+            onEachFeature: pop_NAPS_8,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_NAPS_7_0(feature));
+                return L.circleMarker(latlng, style_NAPS_8_0(feature));
             },
         });
-        bounds_group.addLayer(layer_NAPS_7);
-        map.addLayer(layer_NAPS_7);
-        function pop_MANGA_LINEAL_8(feature, layer) {
+        bounds_group.addLayer(layer_NAPS_8);
+        map.addLayer(layer_NAPS_8);
+        function pop_MANGA_LINEAL_9(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -574,9 +625,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_MANGA_LINEAL_8_0() {
+        function style_MANGA_LINEAL_9_0() {
             return {
-                pane: 'pane_MANGA_LINEAL_8',
+                pane: 'pane_MANGA_LINEAL_9',
                 shape: 'diamond',
                 radius: 6.4,
                 opacity: 1,
@@ -591,27 +642,27 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_MANGA_LINEAL_8');
-        map.getPane('pane_MANGA_LINEAL_8').style.zIndex = 408;
-        map.getPane('pane_MANGA_LINEAL_8').style['mix-blend-mode'] = 'normal';
-        var layer_MANGA_LINEAL_8 = new L.geoJson(json_MANGA_LINEAL_8, {
+        map.createPane('pane_MANGA_LINEAL_9');
+        map.getPane('pane_MANGA_LINEAL_9').style.zIndex = 409;
+        map.getPane('pane_MANGA_LINEAL_9').style['mix-blend-mode'] = 'normal';
+        var layer_MANGA_LINEAL_9 = new L.geoJson(json_MANGA_LINEAL_9, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_MANGA_LINEAL_8',
-            layerName: 'layer_MANGA_LINEAL_8',
-            pane: 'pane_MANGA_LINEAL_8',
-            onEachFeature: pop_MANGA_LINEAL_8,
+            dataVar: 'json_MANGA_LINEAL_9',
+            layerName: 'layer_MANGA_LINEAL_9',
+            pane: 'pane_MANGA_LINEAL_9',
+            onEachFeature: pop_MANGA_LINEAL_9,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_MANGA_LINEAL_8_0(feature));
+                return L.shapeMarker(latlng, style_MANGA_LINEAL_9_0(feature));
             },
         });
-        bounds_group.addLayer(layer_MANGA_LINEAL_8);
-        map.addLayer(layer_MANGA_LINEAL_8);
-        function pop_SECTOR_9(feature, layer) {
+        bounds_group.addLayer(layer_MANGA_LINEAL_9);
+        map.addLayer(layer_MANGA_LINEAL_9);
+        function pop_SECTOR_10(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -637,9 +688,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_SECTOR_9_0() {
+        function style_SECTOR_10_0() {
             return {
-                pane: 'pane_SECTOR_9',
+                pane: 'pane_SECTOR_10',
                 shape: 'triangle',
                 radius: 3.6,
                 opacity: 1,
@@ -654,27 +705,27 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_SECTOR_9');
-        map.getPane('pane_SECTOR_9').style.zIndex = 409;
-        map.getPane('pane_SECTOR_9').style['mix-blend-mode'] = 'normal';
-        var layer_SECTOR_9 = new L.geoJson(json_SECTOR_9, {
+        map.createPane('pane_SECTOR_10');
+        map.getPane('pane_SECTOR_10').style.zIndex = 410;
+        map.getPane('pane_SECTOR_10').style['mix-blend-mode'] = 'normal';
+        var layer_SECTOR_10 = new L.geoJson(json_SECTOR_10, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_SECTOR_9',
-            layerName: 'layer_SECTOR_9',
-            pane: 'pane_SECTOR_9',
-            onEachFeature: pop_SECTOR_9,
+            dataVar: 'json_SECTOR_10',
+            layerName: 'layer_SECTOR_10',
+            pane: 'pane_SECTOR_10',
+            onEachFeature: pop_SECTOR_10,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_SECTOR_9_0(feature));
+                return L.shapeMarker(latlng, style_SECTOR_10_0(feature));
             },
         });
-        bounds_group.addLayer(layer_SECTOR_9);
-        map.addLayer(layer_SECTOR_9);
-        function pop_DOMOS_10(feature, layer) {
+        bounds_group.addLayer(layer_SECTOR_10);
+        map.addLayer(layer_SECTOR_10);
+        function pop_DOMOS_11(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -700,9 +751,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_DOMOS_10_0() {
+        function style_DOMOS_11_0() {
             return {
-                pane: 'pane_DOMOS_10',
+                pane: 'pane_DOMOS_11',
                 shape: 'diamond',
                 radius: 6.4,
                 opacity: 1,
@@ -717,26 +768,26 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_DOMOS_10');
-        map.getPane('pane_DOMOS_10').style.zIndex = 410;
-        map.getPane('pane_DOMOS_10').style['mix-blend-mode'] = 'normal';
-        var layer_DOMOS_10 = new L.geoJson(json_DOMOS_10, {
+        map.createPane('pane_DOMOS_11');
+        map.getPane('pane_DOMOS_11').style.zIndex = 411;
+        map.getPane('pane_DOMOS_11').style['mix-blend-mode'] = 'normal';
+        var layer_DOMOS_11 = new L.geoJson(json_DOMOS_11, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_DOMOS_10',
-            layerName: 'layer_DOMOS_10',
-            pane: 'pane_DOMOS_10',
-            onEachFeature: pop_DOMOS_10,
+            dataVar: 'json_DOMOS_11',
+            layerName: 'layer_DOMOS_11',
+            pane: 'pane_DOMOS_11',
+            onEachFeature: pop_DOMOS_11,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_DOMOS_10_0(feature));
+                return L.shapeMarker(latlng, style_DOMOS_11_0(feature));
             },
         });
-        bounds_group.addLayer(layer_DOMOS_10);
-        map.addLayer(layer_DOMOS_10);
+        bounds_group.addLayer(layer_DOMOS_11);
+        map.addLayer(layer_DOMOS_11);
         var osmGeocoder = new L.Control.Geocoder({
             collapsed: true,
             position: 'topleft',
@@ -749,10 +800,11 @@
         .title += 'Search for a place';
         var baseMaps = {};
         var overlaysTree = [
-            {label: '<img src="legend/DOMOS_10.png" /> DOMOS', layer: layer_DOMOS_10},
-            {label: '<img src="legend/SECTOR_9.png" /> SECTOR', layer: layer_SECTOR_9},
-            {label: '<img src="legend/MANGA_LINEAL_8.png" /> MANGA_LINEAL', layer: layer_MANGA_LINEAL_8},
-            {label: '<img src="legend/NAPS_7.png" /> NAPS', layer: layer_NAPS_7},
+            {label: '<img src="legend/DOMOS_11.png" /> DOMOS', layer: layer_DOMOS_11},
+            {label: '<img src="legend/SECTOR_10.png" /> SECTOR', layer: layer_SECTOR_10},
+            {label: '<img src="legend/MANGA_LINEAL_9.png" /> MANGA_LINEAL', layer: layer_MANGA_LINEAL_9},
+            {label: '<img src="legend/NAPS_8.png" /> NAPS', layer: layer_NAPS_8},
+            {label: '<img src="legend/FIBRA_ADSS_24H_7.png" /> FIBRA_ADSS_24H', layer: layer_FIBRA_ADSS_24H_7},
             {label: '<img src="legend/NODO_6.png" /> NODO', layer: layer_NODO_6},
             {label: '<img src="legend/FIBRA_ADSS_12H_TRONCAL_5.png" /> FIBRA_ADSS_12H_TRONCAL', layer: layer_FIBRA_ADSS_12H_TRONCAL_5},
             {label: '<img src="legend/FIBRA_ADSS_12H_4.png" /> FIBRA_ADSS_12H', layer: layer_FIBRA_ADSS_12H_4},
@@ -798,12 +850,12 @@
               i++;
         });
         var i = 0;
-        layer_MANGA_LINEAL_8.eachLayer(function(layer) {
+        layer_MANGA_LINEAL_9.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['ETIQUETA'] !== null?String('<div style="color: #f6b51c; font-size: 10pt; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['ETIQUETA']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_MANGA_LINEAL_8'});
+            layer.bindTooltip((layer.feature.properties['ETIQUETA'] !== null?String('<div style="color: #f6b51c; font-size: 10pt; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['ETIQUETA']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_MANGA_LINEAL_9'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -811,12 +863,12 @@
               i++;
         });
         var i = 0;
-        layer_SECTOR_9.eachLayer(function(layer) {
+        layer_SECTOR_10.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['NOMBRE'] !== null?String('<div style="color: #000000; font-size: 9pt; font-weight: bold; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['NOMBRE']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_SECTOR_9'});
+            layer.bindTooltip((layer.feature.properties['NOMBRE'] !== null?String('<div style="color: #000000; font-size: 9pt; font-weight: bold; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['NOMBRE']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_SECTOR_10'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -824,21 +876,21 @@
               i++;
         });
         map.addControl(new L.Control.Search({
-            layer: layer_NAPS_7,
+            layer: layer_NAPS_8,
             initial: false,
             hideMarkerOnCollapse: true,
             propertyName: 'HILO'}));
         document.getElementsByClassName('search-button')[0].className +=
          ' fa fa-binoculars';
-        resetLabels([layer_POSTES_CNT_1,layer_POSTES_EERSSA_2,layer_MANGA_LINEAL_8,layer_SECTOR_9]);
+        resetLabels([layer_POSTES_CNT_1,layer_POSTES_EERSSA_2,layer_MANGA_LINEAL_9,layer_SECTOR_10]);
         map.on("zoomend", function(){
-            resetLabels([layer_POSTES_CNT_1,layer_POSTES_EERSSA_2,layer_MANGA_LINEAL_8,layer_SECTOR_9]);
+            resetLabels([layer_POSTES_CNT_1,layer_POSTES_EERSSA_2,layer_MANGA_LINEAL_9,layer_SECTOR_10]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_POSTES_CNT_1,layer_POSTES_EERSSA_2,layer_MANGA_LINEAL_8,layer_SECTOR_9]);
+            resetLabels([layer_POSTES_CNT_1,layer_POSTES_EERSSA_2,layer_MANGA_LINEAL_9,layer_SECTOR_10]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_POSTES_CNT_1,layer_POSTES_EERSSA_2,layer_MANGA_LINEAL_8,layer_SECTOR_9]);
+            resetLabels([layer_POSTES_CNT_1,layer_POSTES_EERSSA_2,layer_MANGA_LINEAL_9,layer_SECTOR_10]);
         });
         </script>
     </body>
