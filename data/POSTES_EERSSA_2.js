@@ -33,6 +33,7 @@ var json_POSTES_EERSSA_2 = {
 { "type": "Feature", "properties": { "id": null, "NRO_POSTE": "159899" }, "geometry": { "type": "Point", "coordinates": [ -79.209062116895353, -4.318442309340615 ] } },
 { "type": "Feature", "properties": { "id": null, "NRO_POSTE": "152772" }, "geometry": { "type": "Point", "coordinates": [ -79.208698497402096, -4.320643002248609 ] } },
 { "type": "Feature", "properties": { "id": null, "NRO_POSTE": "154502" }, "geometry": { "type": "Point", "coordinates": [ -79.205022161637388, -4.321255129904628 ] } },
-{ "type": "Feature", "properties": { "id": null, "NRO_POSTE": "154509" }, "geometry": { "type": "Point", "coordinates": [ -79.204020444029581, -4.320680292798111 ] } }
+{ "type": "Feature", "properties": { "id": null, "NRO_POSTE": "154509" }, "geometry": { "type": "Point", "coordinates": [ -79.204020444029581, -4.320680292798111 ] } },
+{ "type": "Feature", "properties": { "id": null, "NRO_POSTE": "066219" }, "geometry": { "type": "Point", "coordinates": [ -79.187575774334789, -4.34994068692157 ] } }
 ]
 }
