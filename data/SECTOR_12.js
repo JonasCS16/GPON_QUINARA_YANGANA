@@ -15,6 +15,8 @@ var json_SECTOR_12 = {
 { "type": "Feature", "properties": { "id": null, "NOMBRE": "Comunidades" }, "geometry": { "type": "Point", "coordinates": [ -79.224135354292216, -4.336619388307911 ] } },
 { "type": "Feature", "properties": { "id": null, "NOMBRE": "San Gabriel" }, "geometry": { "type": "Point", "coordinates": [ -79.221721059257717, -4.353367588538255 ] } },
 { "type": "Feature", "properties": { "id": null, "NOMBRE": "Tumianuma" }, "geometry": { "type": "Point", "coordinates": [ -79.259269911554696, -4.30320654797474 ] } },
-{ "type": "Feature", "properties": { "id": null, "NOMBRE": "El Sauce" }, "geometry": { "type": "Point", "coordinates": [ -79.262264873465369, -4.301627155793474 ] } }
+{ "type": "Feature", "properties": { "id": null, "NOMBRE": "El Sauce" }, "geometry": { "type": "Point", "coordinates": [ -79.262264873465369, -4.301627155793474 ] } },
+{ "type": "Feature", "properties": { "id": null, "NOMBRE": "La Palmira" }, "geometry": { "type": "Point", "coordinates": [ -79.233235613256284, -4.338906058495778 ] } },
+{ "type": "Feature", "properties": { "id": null, "NOMBRE": "Chumberos" }, "geometry": { "type": "Point", "coordinates": [ -79.238931543150457, -4.329221181214534 ] } }
 ]
 }
