@@ -281,6 +281,13 @@ var json_POSTES_EERSSA_3 = {
 { "type": "Feature", "properties": { "id": null, "NRO_POSTE": "178659" }, "geometry": { "type": "Point", "coordinates": [ -79.231186768263456, -4.339990728939619 ] } },
 { "type": "Feature", "properties": { "id": null, "NRO_POSTE": "150325" }, "geometry": { "type": "Point", "coordinates": [ -79.23230337998362, -4.33954558423909 ] } },
 { "type": "Feature", "properties": { "id": null, "NRO_POSTE": "192213" }, "geometry": { "type": "Point", "coordinates": [ -79.232778627533335, -4.339390255223299 ] } },
-{ "type": "Feature", "properties": { "id": null, "NRO_POSTE": "192212" }, "geometry": { "type": "Point", "coordinates": [ -79.233058495534777, -4.338950594954538 ] } }
+{ "type": "Feature", "properties": { "id": null, "NRO_POSTE": "192212" }, "geometry": { "type": "Point", "coordinates": [ -79.233058495534777, -4.338950594954538 ] } },
+{ "type": "Feature", "properties": { "id": null, "NRO_POSTE": "150323" }, "geometry": { "type": "Point", "coordinates": [ -79.232311300776075, -4.340128725936909 ] } },
+{ "type": "Feature", "properties": { "id": null, "NRO_POSTE": "150322" }, "geometry": { "type": "Point", "coordinates": [ -79.232636053268351, -4.340738852264974 ] } },
+{ "type": "Feature", "properties": { "id": null, "NRO_POSTE": "150321" }, "geometry": { "type": "Point", "coordinates": [ -79.233000409723147, -4.34131146228607 ] } },
+{ "type": "Feature", "properties": { "id": null, "NRO_POSTE": "150320" }, "geometry": { "type": "Point", "coordinates": [ -79.234590508816467, -4.342397445615515 ] } },
+{ "type": "Feature", "properties": { "id": null, "NRO_POSTE": "150316" }, "geometry": { "type": "Point", "coordinates": [ -79.231659815593432, -4.345582329528467 ] } },
+{ "type": "Feature", "properties": { "id": null, "NRO_POSTE": "150317" }, "geometry": { "type": "Point", "coordinates": [ -79.232558825541588, -4.345100550060301 ] } },
+{ "type": "Feature", "properties": { "id": null, "NRO_POSTE": "062470" }, "geometry": { "type": "Point", "coordinates": [ -79.237295459453478, -4.333189491535546 ] } }
 ]
 }
