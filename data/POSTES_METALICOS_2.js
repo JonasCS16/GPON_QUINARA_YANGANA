@@ -13,6 +13,11 @@ var json_POSTES_METALICOS_2 = {
 { "type": "Feature", "properties": { "id": null, "ETIQUETA": "PM08m" }, "geometry": { "type": "Point", "coordinates": [ -79.202120272412728, -4.352851490595232 ] } },
 { "type": "Feature", "properties": { "id": null, "ETIQUETA": "PM08m" }, "geometry": { "type": "Point", "coordinates": [ -79.201791047756089, -4.353380540781866 ] } },
 { "type": "Feature", "properties": { "id": null, "ETIQUETA": "PM06m" }, "geometry": { "type": "Point", "coordinates": [ -79.201442716311362, -4.353635539907978 ] } },
-{ "type": "Feature", "properties": { "id": null, "ETIQUETA": "PM06m" }, "geometry": { "type": "Point", "coordinates": [ -79.201253118183189, -4.354072262348546 ] } }
+{ "type": "Feature", "properties": { "id": null, "ETIQUETA": "PM06m" }, "geometry": { "type": "Point", "coordinates": [ -79.201253118183189, -4.354072262348546 ] } },
+{ "type": "Feature", "properties": { "id": null, "ETIQUETA": "PM06m" }, "geometry": { "type": "Point", "coordinates": [ -79.238812291216178, -4.32434351051127 ] } },
+{ "type": "Feature", "properties": { "id": null, "ETIQUETA": "PM06m" }, "geometry": { "type": "Point", "coordinates": [ -79.233713281047798, -4.344408731976229 ] } },
+{ "type": "Feature", "properties": { "id": null, "ETIQUETA": "PM06m" }, "geometry": { "type": "Point", "coordinates": [ -79.23327763746056, -4.344422553535317 ] } },
+{ "type": "Feature", "properties": { "id": null, "ETIQUETA": "PM06m" }, "geometry": { "type": "Point", "coordinates": [ -79.233020211704485, -4.344631851399116 ] } },
+{ "type": "Feature", "properties": { "id": null, "ETIQUETA": "PM06m" }, "geometry": { "type": "Point", "coordinates": [ -79.234010310766294, -4.34397335273531 ] } }
 ]
 }
